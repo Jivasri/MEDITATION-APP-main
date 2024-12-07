@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShinHaven</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="Assets-Aniket/ShinHaven.jpg">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="Assets-Aniket/ShinHaven.jpg" alt="ShinHaven Logo">
+        </div>
+
+        <div class="auth-buttons">
+            <button id="sign-up-btn" onclick="location.href='signup.html'">Sign Up</button>
+            <p id="greeting"></p>
+            <button id="logout-btn" style="display: none;" onclick="logout()">Logout</button>
+        </div>
+    </header>
+
+
+    <!-- Parallax Section -->
+    <div class="parallax">
+        <img src="Assets-Aniket/2-Mountain.png" alt="mountain" class="parallax-layer" id="layer1">
+        <img src="Assets-Aniket/3-fog.png" alt="fog1" class="parallax-layer" id="layer2">
+        <img src="Assets-Aniket/4-fog.png" alt="fog2" class="parallax-layer" id="layer3">
+        <img src="Assets-Aniket/5-Island.png" alt="island" class="parallax-layer" id="layer4">
+        <img src="Assets-Aniket/6-mountain.png" alt="mountain2" class="parallax-layer" id="layer5">
+        <img src="Assets-Aniket/7-fog.png" alt="fog3" class="parallax-layer" id="layer6">
+        <img src="Assets-Aniket/9-fog.png" alt="fog4" class="parallax-layer" id="layer7">
+
+        <div class="center-content">
+            <h1 id="shin-Text">Welcome to ShinHaven</h1>
+            <p id="scroll-text">Scroll down to find your inner peace and spiritual growth.</p>
+        </div>
+
+        <img src="Assets-Aniket/10-rock.png" alt="rock" class="parallax-layer" id="layer8">
+        <img src="Assets-Aniket/11-rock-.png" alt="rock2" class="parallax-layer" id="layer9">
+        <img src="Assets-Aniket/12-fog.png" alt="fog5" class="parallax-layer" id="layer10">
+        <img src="Assets-Aniket/13-sun.png" alt="sun" class="parallax-layer" id="layer11">
+        <img src="Assets-Aniket/14-black_shadow.png" alt="shadow" class="parallax-layer" id="layer12">
+        <img src="Assets-Aniket/15-black_shadow.png" alt="shadow2" class="parallax-layer" id="layer13">
+    </div>
+
+    <main>
+        <section id="about" class="about-section">
+            <h2>Explore the inner peace</h2>
+            <p>ShinHaven is a peaceful retreat for the soul. We believe in the power of mindfulness, meditation, and
+                self-reflection to unlock your true potential. Our mission is to help you find inner peace, heal your
+                mind, and create a stronger connection with your spirit.</p>
+            <p>Whether you are new to meditation or experienced in spiritual practices, ShinHaven provides a sanctuary
+                for people from all walks of life.</p>
+
+
+            <div class="cards-container">
+                <a href="music.html" class="card" id="music-card">
+                    <img src="Assets-Aniket/piano-nature.jpeg" alt="Music" class="card-img">
+                    <h3>Music</h3>
+                    <p>Explore music to relax, meditate, and align with your inner peace.</p>
+                </a>
+                <a href="scene.html" class="card" id="scene-card">
+                    <img src="Assets-Aniket/Scenery.jpeg" alt="Scene" class="card-img">
+                    <h3>Scene</h3>
+                    <p>Discover beautiful scenes that inspire tranquility and mindfulness.</p>
+                </a>
+                <a href="relax-breathe.html" class="card" id="relax-card">
+                    <img src="Assets-Aniket/yoga.png" alt="Relax and Breathe" class="card-img">
+                    <h3>Relax and Breathe</h3>
+                    <p>Learn relaxation techniques and breathing exercises for inner calm.</p>
+                </a>
+                <a href="mind-chat.html" class="card" id="mind-chat-card">
+                    <img src="Assets-Aniket/mind.jpeg" alt="Mind Chat" class="card-img">
+                    <h3>Mind Chat</h3>
+                    <p>Join discussions and chats focused on mental well-being and growth.</p>
+                </a>
+            </div>
+
+        </section>
+        <section id="mood-tracker">
+            <h2>Track Your Mood</h2>
+            <p>Choose how you feel today and let us help you track your emotional journey.</p>
+        
+            <div class="mood-selection">
+                <button class="mood-btn" id="happy">😊 Happy</button>
+                <button class="mood-btn" id="calm">😌 Calm</button>
+                <button class="mood-btn" id="stressed">😫 Stressed</button>
+                <button class="mood-btn" id="anxious">😟 Anxious</button>
+                <button class="mood-btn" id="sad">😢 Sad</button>
+            </div>
+        
+            <div id="mood-history" style="display: none;">
+                <h3>Your Mood History</h3>
+                <ul id="history-list">
+                    <!-- Mood history will be listed here -->
+                </ul>
+                <button style="align-self: center;" id="clear-history" >Clear History</button>
+            </div>
+        </section>
+        
+        <!-- Modal for Redirection Notification -->
+        <div id="redirect-modal" class="redirect-modal">
+            <div class="modal-content">
+              
+                <h2 id="redirect-message"></h2>
+                <p id="suggested-action"></p>
+            </div>
+        </div>
+
+
+    </main>
+
+
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 ShinHaven. Designed by Aniket Kumar .</p>
+            <div class="footer-links">
+                <a target="_blank" href="https://www.linkedin.com/in/aniket-kumar-86622321a/">Contact us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

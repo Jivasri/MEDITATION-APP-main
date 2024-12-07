@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relax & Breathe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/output.css">
+    <link rel="stylesheet" href="relax-breathe.css"> 
+    <link rel="shortcut icon" href="Assets-Aniket/ShinHaven.jpeg" type="image/x-icon">
+</head>
+<body>
+
+    <a class="logo" href="index.html">
+        <img src="Assets-Aniket/ShinHaven.jpeg" alt="Logo"> 
+    </a>
+
+    <div class="flex flex-col items-center justify-between min-h-screen px-4">
+
+        <header class="text-center py-8 sm:py-6">
+            <h1 class="heading text-5xl font-extrabold text-white shadow-lg">
+                Relax & Breathe
+            </h1>
+            <p class="text-xl mt-2">A moment of peace for your mind and soul</p>
+        </header>
+
+        <div class=" cc flex flex-col gap-6 w-full max-w-5xl justify-center flex-grow items-center">
+
+            <!-- First Card: Deep Breathing -->
+            <div class="relative flex flex-col rounded-lg overflow-hidden shadow-lg bg-cover bg-center card" style="background-image: url('Assets-Aniket/deep-breathe.jpg');">
+                <div class="absolute inset-0 bg-black opacity-50 overlay"></div>
+                <div class="relative z-10 p-6 flex flex-col justify-between h-full">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-2">Deep Breathing</h2>
+                        <p class="text-lg mb-4">
+                            It helps reduce stress by calming the nervous system, improves focus and mental clarity by increasing oxygen flow to the brain</p>
+                    </div>
+                    <div class="flex justify-center gap-6 mb-4">
+                        <a target="_blank" href="https://www.healthline.com/health/diaphragmatic-breathing" class="btn btn-read-more w-32">Read More</a>
+                        <a href="Breathing links/deep-breathing.html" class="btn btn-start c1 w-32">
+                            <button id="startBtn">START</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Card: 4-7-8 Technique -->
+            <div class=" c2 relative flex flex-col rounded-lg overflow-hidden shadow-lg bg-cover bg-center card" style="background-image: url('Assets-Aniket/deep-breathe2.jpg');">
+                <div class="absolute inset-0 bg-black opacity-50 overlay"></div>
+                <div class="relative z-10 p-6 flex flex-col justify-between h-full">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-2">4-7-8 Technique</h2>
+                        <p class="text-4xl mb-4">
+                            The 4-7-8 technique forces the mind and body to focus on regulating the breath.
+                        </p>
+                    </div>
+                    <div class="flex justify-center gap-6 mb-4">
+                        <a target="_blank" href="https://www.healthline.com/health/4-7-8-breathing" class="btn btn-read-more w-32">Read More</a>
+                        <a href="Breathing links/478.html" class="btn btn-start c2 w-32">
+                            <button>START</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

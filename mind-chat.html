@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Chat | ShinHaven</title>
+    <link rel="stylesheet" href="mind-chat.css">
+    <link rel="icon" href="Assets-Aniket/ShinHaven.jpeg" type="image/x-icon">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="stylesheet" href="scrollbar.css">
+</head>
+
+<body>
+    <header class="header">
+        <h2 class="title">Welcome to ShinRaven Mind Chat</h2>
+        <h4 class="subtitle">How can I help you today?</h4>
+        <!-- Suggestion List -->
+        <ul class="suggestion-list">
+            <li class="suggestion">
+                <h4 class="text">Help me with Meditation</h4>
+                <span class="icon material-symbols-rounded">Lightbulb</span>
+            </li>
+            <li class="suggestion">
+                <h4 class="text">Explain the benefits of Yoga.</h4>
+                <span class="icon material-symbols-rounded">Campaign</span>
+            </li>
+            <li class="suggestion">
+                <h4 class="text">Best places to travel for mind detox</h4>
+                <span class="icon material-symbols-rounded">
+                    Explore
+                </span>
+            </li>
+            <li class="suggestion">
+                <h4 class="text">How to follow the path of spirituality?</h4>
+                <span class="icon material-symbols-rounded">
+                    draw
+                </span>
+            </li>
+        </ul>
+    </header>
+
+    <!-- Chat list container -->
+     <div class="chat-list">
+         <!-- Incoming prompt messages will be shown in the chat list by JS -->
+       <!-- Loading animation will be added dynamically by JS -->
+     </div>
+    <!-- Typing area -->
+    <div class="typing-area">
+        <form action="#" class="typing-form">
+            <div class="input-wrapper">
+                <input type="text" id="typing-input" required placeholder="Feel free to express yourself here">
+                <button class="icon material-symbols-rounded">send</button>
+            </div>
+            <div class="action-buttons">
+               
+                <span id = "delete-btn" class="icon material-symbols-rounded">delete</span>
+            </div>
+        </form>
+        <p class="disclaimer-text">
+            ShinHaven Mind Chat may display inaccurate info , including about people , so double check its responses.
+        </p>
+    </div>
+    <script src="mind-chat.js"></script>
+</body>
+
+</html>

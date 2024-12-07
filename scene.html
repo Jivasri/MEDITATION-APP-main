@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scene - ShinHaven</title>
+    <link rel="stylesheet" href="scene.css">
+    <link rel="icon" type="image/x-icon" href="Assets-Aniket/ShinHaven.jpg">
+
+    <!-- Poppins Font Import -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <div class="logo">
+                <img src="Assets-Aniket/ShinHaven.jpg" alt="ShinHaven Logo">
+            </div>
+        </a>
+    </header>
+
+    <main>
+        <section id="scene-section" class="scene-section">
+            <h2>Explore the Tranquil Scenes</h2>
+            <p>Click on the cards to explore beautiful and peaceful scenes.</p>
+
+            <div class="cards-container">
+                <div class="card" id="lake-sunset" onclick="openModal('lake-sunset-modal')">
+                    <img src="Assets-Aniket/scene1.jpg" alt="Lake Sunset">
+                    <h3>Lake Sunset</h3>
+                </div>
+                <div class="card" id="river-forest" onclick="openModal('river-forest-modal')">
+                    <img src="Assets-Aniket/scene2.jpg" alt="River Forest">
+                    <h3>River Forest</h3>
+                </div>
+                <div class="card" id="rain" onclick="openModal('rain-modal')">
+                    <img src="Assets-Aniket/scene3.jpg" alt="Rain">
+                    <h3>Rain</h3>
+                </div>
+                <div class="card" id="rainfall" onclick="openModal('rainfall-modal')">
+                    <img src="Assets-Aniket/scene4.jpg" alt="Rainfall">
+                    <h3>Rainfall</h3>
+                </div>
+                <div class="card" id="snow" onclick="openModal('snow-modal')">
+                    <img src="Assets-Aniket/scene6.jpg" alt="Snow">
+                    <h3>Snow</h3>
+                </div>
+                <div class="card" id="mountain-lake" onclick="openModal('mountain-lake-modal')">
+                    <img src="Assets-Aniket/scene5.jpg" alt="Mountain Lake">
+                    <h3>Mountain Lake</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Structures -->
+    <div id="lake-sunset-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('lake-sunset-modal')">&times;</span>
+            <video id="lake-sunset-video" class="video-player" loop>
+                <source src="Videos/scene1.mp4" type="video/mp4">
+            </video>
+            <div class="controls">
+                <button onclick="setVideoLoop('lake-sunset-video', 5)">Loop for 5 Min</button>
+                <button onclick="setVideoLoop('lake-sunset-video', 10)">Loop for 10 Min</button>
+                <span id="lake-sunset-timer" class="timer">00:00</span> <!-- Unique timer ID for this modal -->
+            </div>
+        </div>
+    </div>
+
+    <div id="river-forest-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('river-forest-modal')">&times;</span>
+            <video id="river-forest-video" class="video-player" loop>
+                <source src="Videos/scene22.MOV" type="video/mp4">
+            </video>
+            <div class="controls">
+                <button onclick="setVideoLoop('river-forest-video', 5)">Loop for 5 Min</button>
+                <button onclick="setVideoLoop('river-forest-video', 10)">Loop for 10 Min</button>
+                <span id="river-forest-timer" class="timer">00:00</span> <!-- Unique timer ID for this modal -->
+            </div>
+        </div>
+    </div>
+
+    <div id="rain-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('rain-modal')">&times;</span>
+            <video id="rain-video" class="video-player" loop>
+                <source src="Videos/scene3.mp4" type="video/mp4">
+            </video>
+            <div class="controls">
+                <button onclick="setVideoLoop('rain-video', 5)">Loop for 5 Min</button>
+                <button onclick="setVideoLoop('rain-video', 10)">Loop for 10 Min</button>
+                <span id="rain-timer" class="timer">00:00</span> <!-- Unique timer ID for this modal -->
+            </div>
+        </div>
+    </div>
+
+    <div id="rainfall-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('rainfall-modal')">&times;</span>
+            <video id="rainfall-video" class="video-player" loop>
+                <source src="Videos/scene44.MOV" type="video/mp4">
+            </video>
+            <div class="controls">
+                <button onclick="setVideoLoop('rainfall-video', 5)">Loop for 5 Min</button>
+                <button onclick="setVideoLoop('rainfall-video', 10)">Loop for 10 Min</button>
+                <span id="rainfall-timer" class="timer">00:00</span> <!-- Unique timer ID for this modal -->
+            </div>
+        </div>
+    </div>
+
+    <div id="snow-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('snow-modal')">&times;</span>
+            <video id="snow-video" class="video-player" loop>
+                <source src="Videos/scene55.MOV" type="video/mp4">
+            </video>
+            <div class="controls">
+                <button onclick="setVideoLoop('snow-video', 5)">Loop for 5 Min</button>
+                <button onclick="setVideoLoop('snow-video', 10)">Loop for 10 Min</button>
+                <span id="snow-timer" class="timer">00:00</span> <!-- Unique timer ID for this modal -->
+            </div>
+        </div>
+    </div>
+
+    <div id="mountain-lake-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('mountain-lake-modal')">&times;</span>
+            <video id="mountain-lake-video" class="video-player" loop>
+                <source src="Videos/scene6.mp4" type="video/mp4">
+            </video>
+            <div class="controls">
+                <button onclick="setVideoLoop('mountain-lake-video', 5)">Loop for 5 Min</button>
+                <button onclick="setVideoLoop('mountain-lake-video', 10)">Loop for 10 Min</button>
+                <span id="mountain-lake-timer" class="timer">00:00</span> <!-- Unique timer ID for this modal -->
+            </div>
+        </div>
+    </div>
+
+    <script src="scene.js"></script>
+</body>
+
+</html>

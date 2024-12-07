@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - ShinHaven</title>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="icon" type="image/x-icon" href="Assets-Aniket/ShinHaven.jpg">
+    <style>
+        /* Basic loading spinner styles */
+        .loading-spinner {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            color: #fff;
+            z-index: 1000;
+        }
+
+        .loading-spinner::after {
+            content: '⏳';
+            font-size: 48px;
+            animation: rotate 1s infinite linear;
+        }
+
+        /* Rotation animation for spinner */
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Overlay for loading screen */
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="logo">
+            <a href="index.html"><img src="Assets-Aniket/ShinHaven.jpg" alt="ShinHaven Logo"></a>
+        </div>
+
+        <div class="sign-up-container">
+            <div class="form-wrapper">
+                <h1>GET STARTED</h1>
+                <form id="sign-up-form">
+                    <label for="username">USERNAME</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                    <label for="password">PASSWORD</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <button type="submit">Start Your Journey</button>
+                </form>
+                <p id="error-message" style="color: red; display: none;">Password must be at least 6 characters long and contain at least one special character.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Loading overlay and spinner -->
+    <div class="loading-overlay"></div>
+    <div class="loading-spinner"></div>
+
+    <script>
+        document.getElementById('sign-up-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+
+            // Get user input
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Password validation: minimum 6 characters and at least one special character
+            const passwordRegex = /^(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d@$!%*?&]{6,}$/;
+
+            if (!passwordRegex.test(password)) {
+                // Show an error message if password is invalid
+                document.getElementById('error-message').style.display = 'block';
+                return; // Stop the form submission
+            }
+
+            // Clear any previous error messages
+            document.getElementById('error-message').style.display = 'none';
+
+            // Show loading animation
+            document.querySelector('.loading-overlay').style.display = 'block';
+            document.querySelector('.loading-spinner').style.display = 'block';
+
+            // Simulate a delay (e.g., 2 seconds) to mimic a real request or task
+            setTimeout(function() {
+                // Store the credentials in localStorage
+                localStorage.setItem('username', username);
+                localStorage.setItem('password', password);
+
+                // Redirect to the home page after successful sign up
+                window.location.href = 'index.html';
+            }, 2000); // Simulate delay of 2 seconds
+        });
+    </script>
+</body>
+</html>

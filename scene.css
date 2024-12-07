@@ -1,0 +1,302 @@
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+/* Global styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('Assets-Aniket/song4.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+/* Header */
+header {
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+
+/* Logo Styles */
+.logo img {
+    width: 70px;
+    height: auto;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* Section and Titles */
+h2 {
+    text-align: center;
+    color: #eee;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+p {
+    text-align: center;
+    color: #ccc;
+    font-size: 1.1em;
+    margin-bottom: 40px;
+}
+
+/* Cards Container */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+    justify-items: center;
+    margin-bottom: 50px;
+}
+
+/* Card Styles */
+.card {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-size: 1.5em;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6);
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #222;
+    padding: 0;
+    max-width: 90%;
+    max-height: 90%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2em;
+    color: #fff;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    padding: 5px;
+    transition: background 0.3s ease;
+    z-index: 100;
+}
+
+.close:hover {
+    background: rgba(210, 52, 52, 0.8);
+}
+
+/* Video Player */
+.video-player {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Controls */
+.controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: absolute;
+    bottom: 20px;
+    z-index: 10;
+}
+
+.controls button {
+    background-color: #444;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover Effects for Controls */
+.controls button:hover {
+    background-color: #666;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.controls button:active {
+    background-color: #555;
+    transform: translateY(2px);
+}
+
+/* Timer Styles */
+.timer {
+    font-size: 1.5em;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effects for Timer */
+.timer:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: scale(1.1);
+}
+
+/* Modal Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 10px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .close {
+        font-size: 1.5em;
+    }
+
+    .controls {
+        bottom: 10px;
+        gap: 10px;
+    }
+
+    .controls button {
+        padding: 8px 5px;
+        font-size: 0.2rem;
+    }
+
+    .timer {
+        font-size: 1.1em;
+        padding: 8px 15px;
+    }
+}
+
+/* Tablet Responsiveness */
+@media (max-width: 1024px) {
+    .modal-content {
+        width: 90%;
+        height: 90%;
+    }
+
+    .controls {
+        gap: 15px;
+    }
+
+    .controls button {
+        padding: 10px 18px;
+    }
+
+    .timer {
+        padding: 10px 18px;
+        font-size: 1.3em;
+    }
+}
+
+/* Mobile View - 375px */
+@media (max-width: 375px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .card {
+        height: 300px;
+    }
+
+    .controls button {
+        padding: 10px 18px;
+        font-size: 0.85rem;
+    }
+
+    .timer {
+        font-size: 1.2em;
+        padding: 10px 15px;
+    }
+}
