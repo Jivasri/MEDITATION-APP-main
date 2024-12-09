@@ -124,5 +124,5 @@ The project is built using the following technologies:
 - **Email Client Integration**: For the "Share Progress" feature.
 - **API Integration**: For the Mind Chat feature to offer AI-based conversations.
 - **Media Players**: For playing calming music and videos with dynamic control features.
-- **CSS Animations and Transitions**: For smooth animations across the site, including hover effects, modals, and page transitions.
+- **CSS Animations and Transitions**: For smooth animations across the site, including hover effects, modals, and page transitions..
 
