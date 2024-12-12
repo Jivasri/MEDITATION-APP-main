@@ -1,14 +1,14 @@
 https://github.com/Jivasri/MEDITATION-APP-main
-# ShinHaven
+# Cleaver
 
 ![ShinHaven Cover](Assets-Aniket/ShinRavenCover.png)
 
-ShinHaven is an online platform designed to help users find peace, mindfulness, and spiritual growth through various interactive features. Whether you're looking for relaxing music, tranquil scenes, or meditative techniques, ShinHaven provides a sanctuary for your inner well-being.
+cleaver is an online platform designed to help users find peace, mindfulness, and spiritual growth through various interactive features. Whether you're looking for relaxing music, tranquil scenes, or meditative techniques, cleaver provides a sanctuary for your inner well-being.
 
 ## Live Demo
-You can experience ShinHaven live by visiting the following link:
+You can experience cleaver live by visiting the following link:
 
-[**ShinHaven Live**](https://shinhaven.netlify.app/)
+[**cleaver Live**](https://shinhaven.netlify.app/)
 
 ---
 
@@ -21,11 +21,11 @@ You can experience ShinHaven live by visiting the following link:
 
 ## About the Project
 
-ShinHaven is a platform that aims to create a peaceful retreat for users to focus on mental wellness. The platform includes various interactive sections that guide users through mindfulness practices, relaxation techniques, and mood tracking. It is perfect for people from all walks of life who are seeking inner peace, relaxation, or spiritual growth.
+cleaver is a platform that aims to create a peaceful retreat for users to focus on mental wellness. The platform includes various interactive sections that guide users through mindfulness practices, relaxation techniques, and mood tracking. It is perfect for people from all walks of life who are seeking inner peace, relaxation, or spiritual growth.
 
 ## Features
 
-ShinHaven includes the following key features:
+cleaver includes the following key features:
 
 ### 1. **Parallax Scrolling Effect**
    - The website features a beautiful parallax effect where multiple layers of images move at different speeds when the user scrolls. This creates a dynamic and immersive experience as users navigate the page.
