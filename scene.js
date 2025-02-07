@@ -1,96 +1,98 @@
-let countdownTimer;  
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.util.Duration;
 
-// Open modal function
-function openModal(modalId) {
-    document.getElementById(modalId).style.display = 'flex';
-}
+public class VideoModalApp extends Application {
+    private Timeline countdownTimer;
+    private int timeLeft;
+    private MediaPlayer mediaPlayer;
 
-// Close modal function
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    const video = modal.querySelector('video');
-    
-    if (video) {
-        video.pause();
-        video.currentTime = 0;
-        video.muted = true;
+    @Override
+    public void start(Stage primaryStage) {
+        Button openModalButton = new Button("Open Modal");
+        openModalButton.setOnAction(e -> openModal());
+
+        StackPane root = new StackPane(openModalButton);
+        Scene scene = new Scene(root, 300, 200);
+
+        primaryStage.setTitle("JavaFX Video Modal");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
-    modal.style.display = 'none';
+    private void openModal() {
+        Stage modalStage = new Stage();
+        modalStage.initModality(Modality.APPLICATION_MODAL);
+        modalStage.setTitle("Video Modal");
 
-    // Clear the countdown timer and reset its value for this specific modal
-    const timerElement = modal.querySelector('.timer');
-    if (timerElement) {
-        clearInterval(countdownTimer);
-        timerElement.textContent = '00:00';
+        String videoPath = "file:/path/to/your/video.mp4"; // Change this to your local video file
+        Media media = new Media(videoPath);
+        mediaPlayer = new MediaPlayer(media);
+        MediaView mediaView = new MediaView(mediaPlayer);
+
+        Button playPauseButton = new Button("Play/Pause");
+        playPauseButton.setOnAction(e -> togglePlayPause());
+
+        Button closeModalButton = new Button("Close Modal");
+        closeModalButton.setOnAction(e -> {
+            stopCountdown();
+            mediaPlayer.stop();
+            modalStage.close();
+        });
+
+        Button setLoop5MinButton = new Button("Loop 5 Min");
+        setLoop5MinButton.setOnAction(e -> setVideoLoop(5));
+
+        StackPane modalLayout = new StackPane(mediaView, playPauseButton, setLoop5MinButton, closeModalButton);
+        Scene modalScene = new Scene(modalLayout, 600, 400);
+
+        modalStage.setScene(modalScene);
+        modalStage.show();
     }
-}
 
-// Play/Pause video function
-function playPause(videoId) {
-    const video = document.getElementById(videoId);
-    if (video.paused) {
-        video.play();
-        video.muted = false;
-    } else {
-        video.pause();
-        video.muted = true;
-    }
-}
-
-// Set video loop duration (5 or 10 minutes)
-function setVideoLoop(videoId, minutes) {
-    const video = document.getElementById(videoId);
-    const durationInSeconds = minutes * 60;
-    video.play();
-    video.muted = false;
-    
-    // Get the modal that contains the video
-    const modal = video.closest('.modal');
-    
-    // Get the timer element specific to the modal
-    const timerElement = modal.querySelector('.timer');
-
-    // Clear any existing timer before starting a new one
-    clearInterval(countdownTimer);
-
-    let timeLeft = durationInSeconds;
-
-    // Update the timer every second
-    countdownTimer = setInterval(() => {
-        let minutesLeft = Math.floor(timeLeft / 60);
-        let secondsLeft = timeLeft % 60;
-
-        // Update the specific timer for this modal
-        timerElement.textContent = `${padTime(minutesLeft)}:${padTime(secondsLeft)}`;
-
-        // When time is up, stop the video and clear the timer
-        if (timeLeft <= 0) {
-            clearInterval(countdownTimer);
-            video.pause();
-            video.muted = true;
+    private void togglePlayPause() {
+        if (mediaPlayer.getStatus() == MediaPlayer.Status.PLAYING) {
+            mediaPlayer.pause();
+        } else {
+            mediaPlayer.play();
         }
-        timeLeft--;
-    }, 1000);
-}
+    }
 
-// Function to format the time (adding leading zero for minutes/seconds less than 10)
-function padTime(time) {
-    return time < 10 ? '0' + time : time;
-}
+    private void setVideoLoop(int minutes) {
+        timeLeft = minutes * 60;
+        mediaPlayer.play();
 
-// Function to close all modals
-function closeAllModals() {
-    const modals = document.querySelectorAll('.modal');
-    modals.forEach(modal => {
-        modal.style.display = 'none';
-        clearInterval(countdownTimer);
-    });
-}
+        if (countdownTimer != null) {
+            countdownTimer.stop();
+        }
 
-// Function to handle multiple modals
-function openSpecificModal(modalId) {
-    const allModals = document.querySelectorAll('.modal');
-    allModals.forEach(modal => modal.style.display = 'none');  
-    openModal(modalId);  
+        countdownTimer = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
+            if (timeLeft <= 0) {
+                mediaPlayer.pause();
+                countdownTimer.stop();
+            }
+            timeLeft--;
+        }));
+        countdownTimer.setCycleCount(Timeline.INDEFINITE);
+        countdownTimer.play();
+    }
+
+    private void stopCountdown() {
+        if (countdownTimer != null) {
+            countdownTimer.stop();
+        }
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
 }
